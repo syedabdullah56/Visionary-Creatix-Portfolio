@@ -38,6 +38,10 @@ body {
   position: relative;
   color: white;
   will-change: background-position;
+  
+  /* font */
+  font-family: "Poppins", sans-serif;
+  color: white;
 }
 
 /* Subtle gradient movement */
@@ -83,3 +87,13 @@ body::before {
   }
 }
 
+
+/* Font */
+@font-face {
+  font-family: myFont;
+  src: url(/Milker.ttf);
+}
+
+.mainHeading{
+  font-family:myFont;
+}
