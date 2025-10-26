@@ -10,33 +10,24 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // adjust how far the logo starts from left in mobile view
-  const mobileLogoOffset = "-32px"; 
-
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "#about" },
-    { name: "Services", href: "/services" },
-    { name: "Contact", href: "/contact" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-black/95 backdrop-blur-md border-b border-blue-900/30 transition-all duration-300">
-      <div className="max-w-7xl mx-auto px-4 py-1 flex justify-between items-center h-[68px] md:h-[84px]">
-        
+    <nav className="fixed top-0 left-0 w-full z-[9999] bg-black/90 backdrop-blur-lg border-b border-blue-900/40 shadow-[0_0_20px_rgba(0,150,255,0.2)]">
+      <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center h-[68px] md:h-[84px]">
         {/* Logo */}
-        <div
-          className="flex items-center gap-2 relative top-[1.8vh]"
-          style={{
-            marginLeft: mobileLogoOffset,
-          }}
-        >
+        <div className="flex items-center gap-2">
           <Image
             src="/logoCreatix3.png"
             alt="Visionary Creatix"
-            width={280}
-            height={130}
-            className="w-[230px] sm:w-[250px] md:w-[320px] transition-transform duration-300 hover:scale-110"
+            width={250}
+            height={120}
+            className="w-[200px] sm:w-[240px] md:w-[300px] transition-transform duration-300 hover:scale-105 relative top-[1.5vh]"
             priority
           />
         </div>
@@ -69,7 +60,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       <div
         className={`md:hidden absolute top-[68px] left-0 w-full bg-gradient-to-b from-[#06090f]/95 to-[#0b101c]/95 backdrop-blur-2xl border-t border-blue-900/30 shadow-[0_0_25px_rgba(0,150,255,0.2)] transform transition-all duration-500 ease-in-out ${
           menuOpen
@@ -104,11 +95,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Soft glowing bottom line */}
         <div className="h-[2px] w-3/4 mx-auto bg-gradient-to-r from-blue-700 via-cyan-400 to-blue-700 rounded-full opacity-50"></div>
       </div>
 
-      {/* Animation keyframes */}
       <style jsx>{`
         @keyframes fadeInUp {
           0% {

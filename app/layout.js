@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
         <Navbar />
 
         {/* Main Content */}
-        <main className="pt-20">{children}</main>
+        <main>{children}</main>
       </body>
     </html>
   );
