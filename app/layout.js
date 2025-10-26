@@ -1,5 +1,6 @@
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { Poppins } from "next/font/google";
 
 // ✅ Optimized Google Font
@@ -8,7 +9,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
-
+   
 export const metadata = {
   title: "Visionary Creatix | Digital Agency",
   description:
@@ -24,6 +25,8 @@ export default function RootLayout({ children }) {
 
         {/* Main Content */}
         <main>{children}</main>
+
+        <Footer />
 
          
        

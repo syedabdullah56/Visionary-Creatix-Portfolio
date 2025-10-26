@@ -70,12 +70,12 @@ export default function Hero() {
           </p>
 
           <motion.a
-            href="#about"
+            href="#contact"
             whileHover={{ scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
             className="mt-8 inline-block bg-gradient-to-r from-[#00c6ff] via-[#00aaff] to-[#0066ff] text-white text-lg sm:text-xl font-extrabold px-10 py-4 rounded-full shadow-[0_0_35px_rgba(0,200,255,0.9)] hover:shadow-[0_0_55px_rgba(0,150,255,1)] transition-all duration-300 hover:opacity-95 animate-glowPulse"
           >
-            Explore Our Work
+            Start Building 
           </motion.a>
         </motion.div>
       )}
