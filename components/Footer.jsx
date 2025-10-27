@@ -41,7 +41,7 @@ export default function Footer() {
           <ul className="space-y-1 text-sm">
             <li>
               <a
-                href="#hero"
+                href="/#hero"
                 className="hover:text-[#00d4ff] transition duration-200"
               >
                 Home
@@ -49,7 +49,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="#about"
+                href="/#about"
                 className="hover:text-[#00d4ff] transition duration-200"
               >
                 About
@@ -57,7 +57,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="#testimonials"
+                href="/#testimonials"
                 className="hover:text-[#00d4ff] transition duration-200"
               >
                 Testimonials
@@ -65,7 +65,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="#contact"
+                href="/#contact"
                 className="hover:text-[#00d4ff] transition duration-200"
               >
                 Contact
