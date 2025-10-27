@@ -15,7 +15,7 @@ export default function Services() {
       icon: <Search size={48} className="text-cyan-400" />,
       title: "SEO Optimization",
       desc: "Boost your rankings and visibility through strategic, data-driven SEO practices.",
-      link: "/services/seo-optimization",
+      link: "/services/seo",
     },
     {
       icon: <Palette size={48} className="text-cyan-400" />,

@@ -79,12 +79,6 @@ export default function About() {
         viewport={{ once: true }}
         className="mt-16"
       >
-        {/* <Link
-          href="#services"
-          className="inline-block bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-700 px-10 py-4 rounded-full font-semibold text-white text-lg shadow-[0_0_30px_rgba(0,200,255,0.6)] hover:shadow-[0_0_50px_rgba(0,200,255,0.9)] transition-all duration-300 hover:scale-105"
-        >
-          Explore Our Services
-        </Link> */}
       </motion.div>
     </section>
   );

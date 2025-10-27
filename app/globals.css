@@ -89,6 +89,57 @@ html {
 
 
 
+/* ==========================================================
+   ⚡ GLOBAL SPEED OPTIMIZER — Visionary Creatix
+   Make your entire website move at the speed of light 💨
+   Reduces all transition & animation durations by 50%
+   ========================================================== */
+
+/* Make everything render smoother */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base rule: speed up all transitions & animations */
+*,
+*::before,
+*::after {
+  transition-duration: 0.25s !important; /* Was ~0.5s or more */
+  animation-duration: 0.25s !important;  /* Faster animations */
+  transition-timing-function: ease-out !important;
+  animation-timing-function: ease-out !important;
+}
+
+/* Remove unnecessary animation delays */
+* {
+  animation-delay: 0s !important;
+}
+
+/* Reduce Framer Motion + keyframes globally */
+[class*="motion"] {
+  transition-duration: 0.25s !important;
+  animation-duration: 0.25s !important;
+}
+
+/* Prevent layout lag when things move fast */
+body {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ✅ Accessibility: respect user motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}   
+
+
+
 
 
 
