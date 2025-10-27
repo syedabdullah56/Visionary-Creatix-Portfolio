@@ -13,9 +13,9 @@ export default function About() {
 
       {/* Title */}
       <motion.h2
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
         viewport={{ once: true }}
         className="text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent mb-8 drop-shadow-[0_0_20px_rgba(0,200,255,0.5)]"
       >
@@ -26,12 +26,12 @@ export default function About() {
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
         viewport={{ once: true }}
         className="max-w-3xl text-gray-300 text-lg sm:text-xl leading-relaxed mb-16"
       >
         Founded in <span className="text-cyan-400 font-semibold">2023</span>, Visionary Creatix began with a mission to redefine how digital experiences are built.
-        We craft brands, websites, and campaigns that combine creativity and strategy to make a real-world impact.  
+        We craft brands, websites, and campaigns that combine creativity and strategy to make a real-world impact.
         <br /> <br />
         Our goal is simple — to empower businesses and creators to rise above the noise with
         <span className="text-cyan-400 font-semibold"> innovation, design excellence, and authenticity.</span>
@@ -55,36 +55,30 @@ export default function About() {
         ].map((item, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.2 }}
+            transition={{ duration: 0.4, delay: i * 0.1, ease: "easeOut" }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.05 }}
-            className="relative bg-[#0b1328]/70 backdrop-blur-md p-8 rounded-2xl border border-blue-900/50 hover:border-cyan-400/60 shadow-[0_0_20px_rgba(0,200,255,0.1)] hover:shadow-[0_0_35px_rgba(0,200,255,0.3)] transition-all duration-500"
+            whileHover={{ scale: 1.03 }}
+            className="relative bg-[#0b1328]/70 backdrop-blur-md p-8 rounded-2xl border border-blue-900/50 hover:border-cyan-400/60 shadow-[0_0_20px_rgba(0,200,255,0.1)] hover:shadow-[0_0_35px_rgba(0,200,255,0.3)] transition-all duration-300"
           >
             <h3 className="text-2xl font-semibold text-cyan-400 mb-3">
               {item.title}
             </h3>
             <p className="leading-relaxed text-gray-300">{item.desc}</p>
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 blur-xl"></div>
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 blur-xl"></div>
           </motion.div>
         ))}
       </div>
 
-      {/* CTA to Services */}
+      {/* CTA (if needed later) */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
+        transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
         viewport={{ once: true }}
         className="mt-16"
-      >
-      </motion.div>
+      ></motion.div>
     </section>
   );
 }
-
-
-
-
-

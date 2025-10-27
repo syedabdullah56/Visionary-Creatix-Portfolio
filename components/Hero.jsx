@@ -36,7 +36,7 @@ export default function Hero() {
               }
             : {}
         }
-        transition={{ duration: 1.1, ease: "easeInOut" }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
         className="absolute rounded-full bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-700 shadow-[0_0_100px_rgba(0,212,255,0.8)]"
       ></motion.div>
 
@@ -58,7 +58,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative flex flex-col items-center text-center z-10 px-4"
         >
           <h1 className="text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] font-black leading-tight tracking-tight bg-gradient-to-r from-[#00f0ff] via-[#00d4ff] to-[#009bff] bg-clip-text text-transparent drop-shadow-[0_0_50px_rgba(0,240,255,0.9)]">
@@ -96,7 +96,7 @@ export default function Hero() {
           }
         }
         .animate-twinkle {
-          animation: twinkle 3s infinite ease-in-out;
+          animation: twinkle 1.5s infinite ease-in-out;
         }
 
         @keyframes glowPulse {
@@ -108,7 +108,7 @@ export default function Hero() {
           }
         }
         .animate-glowPulse {
-          animation: glowPulse 2.2s infinite ease-in-out;
+          animation: glowPulse 1.8s infinite ease-in-out;
         }
       `}</style>
     </section>

@@ -29,7 +29,7 @@ export default function Services() {
       desc: "Targeted ad campaigns that maximize ROI and convert viewers into loyal customers.",
       link: "/services/ads-campaigns",
     },
-  ];          
+  ];
 
   return (
     <section
@@ -38,9 +38,9 @@ export default function Services() {
     >
       {/* Title */}
       <motion.h2
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
         viewport={{ once: true }}
         className="text-5xl sm:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent mb-8"
       >
@@ -51,7 +51,7 @@ export default function Services() {
       <motion.p
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
         viewport={{ once: true }}
         className="max-w-3xl text-gray-300 text-lg sm:text-xl leading-relaxed mb-16"
       >
@@ -63,17 +63,19 @@ export default function Services() {
         {services.map((service, index) => (
           <Link key={service.title} href={service.link}>
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.07 }}
-              className="group relative bg-[#0b1328]/70 backdrop-blur-md rounded-2xl border border-blue-900/50 hover:border-cyan-400/60 p-8 text-center shadow-[0_0_20px_rgba(0,200,255,0.1)] hover:shadow-[0_0_30px_rgba(0,200,255,0.3)] transition-all duration-500 cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+              className="group relative bg-[#0b1328]/70 backdrop-blur-md rounded-2xl border border-blue-900/50 hover:border-cyan-400/60 p-8 text-center shadow-[0_0_20px_rgba(0,200,255,0.1)] hover:shadow-[0_0_25px_rgba(0,200,255,0.25)] transition-all duration-300 cursor-pointer"
             >
               <div className="flex justify-center mb-4">{service.icon}</div>
-              <h3 className="text-2xl font-semibold text-white mb-3">{service.title}</h3>
+              <h3 className="text-2xl font-semibold text-white mb-3">
+                {service.title}
+              </h3>
               <p className="text-gray-400 leading-relaxed">{service.desc}</p>
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 blur-xl"></div>
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-30 transition-opacity duration-300 bg-gradient-to-r from-cyan-500 via-blue-600 to-indigo-600 blur-xl"></div>
             </motion.div>
           </Link>
         ))}

@@ -35,10 +35,10 @@ export default function AdsCampaignsPage() {
     <div className="bg-gradient-to-br from-black via-[#1a0500] to-[#330000] text-white min-h-screen pt-24 pb-20 px-6 sm:px-12 overflow-hidden">
       {/* Hero Section */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="text-center max-w-4xl mx-auto mb-20"
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="text-center max-w-4xl mx-auto mb-16"
       >
         <h1 className="text-4xl sm:text-6xl font-extrabold bg-gradient-to-r from-orange-400 via-red-500 to-yellow-400 text-transparent bg-clip-text">
           Ad Campaigns That Convert Views Into Revenue
@@ -55,17 +55,20 @@ export default function AdsCampaignsPage() {
         {adServices.map((service, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            whileHover={{ scale: 1.05 }}
-            className="bg-gradient-to-br from-[#1a0d00] to-[#331000] p-8 rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-orange-400/30 border border-gray-800 transition-all duration-300"
+            transition={{ duration: 0.3, delay: index * 0.1, ease: "easeOut" }}
+            whileHover={{ scale: 1.03 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-br from-[#1a0d00] to-[#331000] p-8 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-orange-400/20 border border-gray-800 transition-all duration-200"
           >
-            <div className="flex justify-center mb-6">{service.icon}</div>
+            <div className="flex justify-center mb-5">{service.icon}</div>
             <h2 className="text-2xl font-semibold mb-3 text-center text-white">
               {service.title}
             </h2>
-            <p className="text-gray-400 text-center">{service.description}</p>
+            <p className="text-gray-400 text-center text-sm leading-relaxed">
+              {service.description}
+            </p>
           </motion.div>
         ))}
       </div>
@@ -74,8 +77,9 @@ export default function AdsCampaignsPage() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="text-center mt-24"
+        transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-center mt-20"
       >
         <h2 className="text-3xl sm:text-5xl font-bold text-white">
           Let’s Create Campaigns That Convert
@@ -87,8 +91,9 @@ export default function AdsCampaignsPage() {
         </p>
         <motion.a
           href="/#contact"
-          whileHover={{ scale: 1.1 }}
-          className="inline-block mt-8 px-8 py-3 bg-gradient-to-r from-orange-400 via-red-500 to-yellow-400 text-black font-semibold rounded-full shadow-lg hover:shadow-orange-400/40 transition duration-300"
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.2 }}
+          className="inline-block mt-8 px-8 py-3 bg-gradient-to-r from-orange-400 via-red-500 to-yellow-400 text-black font-semibold rounded-full shadow-lg hover:shadow-orange-400/30 transition duration-200"
         >
           Launch My Campaign 🚀
         </motion.a>

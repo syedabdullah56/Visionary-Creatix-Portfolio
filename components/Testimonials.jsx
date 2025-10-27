@@ -36,20 +36,19 @@ export default function Testimonials() {
       role: "Entrepreneur",
       text: "One of the best agencies I’ve ever worked with. Their passion for excellence is inspiring.",
     },
-  
   ];
 
   return (
     <section
       id="testimonials"
       ref={ref}
-      className="relative w-full py-24 px-6 md:px-16 bg-gradient-to-b from-[#000814] via-[#02112b] to-[#000] text-white overflow-hidden"
+      className="relative w-full py-20 px-6 md:px-16 bg-gradient-to-b from-[#000814] via-[#02112b] to-[#000] text-white overflow-hidden"
     >
       {/* Header */}
       <motion.h2
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
         className="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-tight bg-gradient-to-r from-cyan-400 via-sky-500 to-blue-600 bg-clip-text text-transparent"
       >
         What Our Clients Say
@@ -60,14 +59,10 @@ export default function Testimonials() {
         {testimonials.map((t, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 40, scale: 0.95 }}
-            animate={
-              inView
-                ? { opacity: 1, y: 0, scale: 1 }
-                : {}
-            }
-            transition={{ duration: 0.7, delay: index * 0.1, ease: "easeOut" }}
-            className="p-6 rounded-2xl bg-gradient-to-br from-[#031b3d]/70 to-[#001527]/60 backdrop-blur-lg border border-cyan-600/30 shadow-[0_0_25px_rgba(0,180,255,0.15)] hover:shadow-[0_0_45px_rgba(0,200,255,0.3)] transition-all duration-300"
+            initial={{ opacity: 0, y: 30, scale: 0.97 }}
+            animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
+            className="p-6 rounded-2xl bg-gradient-to-br from-[#031b3d]/70 to-[#001527]/60 backdrop-blur-lg border border-cyan-600/30 shadow-[0_0_25px_rgba(0,180,255,0.15)] hover:shadow-[0_0_35px_rgba(0,200,255,0.25)] transition-all duration-250"
           >
             <p className="text-gray-200 text-base md:text-lg leading-relaxed italic mb-6">
               “{t.text}”
@@ -80,9 +75,9 @@ export default function Testimonials() {
         ))}
       </div>
 
-      {/* Glow Orbs for Depth */}
-      <div className="absolute top-20 left-20 w-32 h-32 bg-cyan-500/20 blur-[100px] rounded-full"></div>
-      <div className="absolute bottom-20 right-20 w-40 h-40 bg-blue-700/25 blur-[120px] rounded-full"></div>
+      {/* Soft Glow Orbs */}
+      <div className="absolute top-20 left-20 w-28 h-28 bg-cyan-500/15 blur-[90px] rounded-full"></div>
+      <div className="absolute bottom-20 right-20 w-36 h-36 bg-blue-700/20 blur-[100px] rounded-full"></div>
     </section>
   );
 }

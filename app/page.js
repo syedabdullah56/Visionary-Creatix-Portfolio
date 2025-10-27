@@ -15,3 +15,6 @@ export default function Home() {
     </main>
   );
 }
+
+//Now I am changing each component and page animation duration ta have an smoother experience.
+//Hero
