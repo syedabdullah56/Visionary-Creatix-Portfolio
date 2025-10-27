@@ -146,3 +146,167 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+/* ========== GLOBAL BODY STYLING ========== */
+ /* body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #02060f, #050f20);
+  background-size: 400% 400%;
+  animation: gradientShift 25s ease infinite;
+  overflow-x: hidden; 
+  overflow-y: auto;
+  position: relative;
+  color: white;
+  will-change: background-position;
+  font-family: "Poppins", sans-serif;
+} 
+
+/* ========== GRADIENT BACKGROUND ANIMATION ========== */
+/* @keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+/* ========== PARTICLE EFFECT ========== */
+/* body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(0, 120, 255, 0.15) 1px, transparent 2px),
+                    radial-gradient(rgba(0, 80, 255, 0.08) 1px, transparent 2px);
+  background-size: 140px 140px, 100px 100px;
+  animation: particleFloat 30s linear infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 0 2px rgba(0, 150, 255, 0.3));
+  opacity: 0.15;
+  z-index: 0;
+} */
+
+/* @keyframes particleFloat {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  50% {
+    background-position: 40px 60px, -30px 50px;
+  }
+  100% {
+    background-position: 0 0, 0 0;
+  }
+} */
+
+/* ========== TYPOGRAPHY ========== */
+/* .mainHeading {
+  font-family: myFont;
+} */
+
+/* ========== SMOOTH SCROLLING (no snap) ========== */
+/* html {
+  scroll-behavior: smooth;
+} */
+
+
+
+/* ==========================================================
+   ⚡ GLOBAL SPEED OPTIMIZER — Visionary Creatix
+   Make your entire website move at the speed of light 💨
+   Reduces all transition & animation durations by 50%
+   ========================================================== */
+
+/* Make everything render smoother */
+/* html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+/* Base rule: speed up all transitions & animations */
+/* *, */
+/* *::before,
+*::after {
+  transition-duration: 0.25s !important; /* Was ~0.5s or more */
+  /* animation-duration: 0.25s !important;  
+  transition-timing-function: ease-out !important;
+  animation-timing-function: ease-out !important;
+} */
+
+/* Remove unnecessary animation delays */
+/* * {
+  animation-delay: 0s !important;
+} */
+
+/* Reduce Framer Motion + keyframes globally */
+/* [class*="motion"] {
+  transition-duration: 0.25s !important;
+  animation-duration: 0.25s !important;
+} */
+
+/* Prevent layout lag when things move fast */
+/* body {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+} */
+
+/* ✅ Accessibility: respect user motion preference */
+/* @media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}    */
+
+
+
+
+
+
+
+
+
