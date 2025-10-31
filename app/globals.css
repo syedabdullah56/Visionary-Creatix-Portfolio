@@ -124,3 +124,12 @@ body::before {
     transform: none !important;
   }
 }
+
+
+
+html[style*="--reduce-motion:true"] * {
+  animation-duration: 0.4s !important;
+  transition-duration: 0.3s !important;
+  animation-timing-function: ease-out !important;
+  transition-timing-function: ease-out !important;
+}
