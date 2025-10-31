@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState, Suspense } from "react";
-import { MotionConfig } from "framer-motion";
+import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Services from "../components/Services";
@@ -10,47 +9,52 @@ import Contact from "../components/Contact";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isFullyLoaded, setIsFullyLoaded] = useState(false);
 
+  // ✅ Detect mobile devices
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
     checkMobile();
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
-  // ✅ Preload everything before showing on mobile
+  // ✅ Preload and render full page *off-screen* before showing
   useEffect(() => {
     if (isMobile) {
-      const timer = setTimeout(() => setIsLoaded(true), 1000); // give time to fully render
-      return () => clearTimeout(timer);
+      // Wait for React to mount and browser to paint everything
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          setIsFullyLoaded(true);
+        }, 800); // preload delay — adjust between 500–1000ms
+      });
     } else {
-      setIsLoaded(true);
+      setIsFullyLoaded(true);
     }
   }, [isMobile]);
 
-  if (!isLoaded && isMobile) {
+  // ✅ While preloading on mobile, show a smooth splash/loading screen
+  if (isMobile && !isFullyLoaded) {
     return (
       <main className="flex justify-center items-center h-screen bg-black text-white text-lg font-semibold">
-        Loading fast experience...
+        Optimizing mobile experience...
       </main>
     );
   }
 
   return (
-    <MotionConfig reducedMotion={isMobile ? "always" : "never"}>
-      <Suspense fallback={<div className="text-center mt-10">Loading...</div>}>
-        <main className="scroll-smooth overflow-x-hidden">
-          <Hero />
-          <About />
-          <Services />
-          <Testimonials />
-          <Contact />
-        </main>
-      </Suspense>
-    </MotionConfig>
+    <main className="scroll-smooth overflow-x-hidden">
+      <Hero />
+      <About />
+      <Services />
+      <Testimonials />
+      <Contact />
+    </main>
   );
 }
+
+
+
 
 
 
