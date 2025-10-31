@@ -1,46 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
 import Hero from "../components/Hero";
-import About from "../components/About";
-import Services from "../components/Services";
-import Testimonials from "../components/Testimonials";
-import Contact from "../components/Contact";
+
+const About = dynamic(() => import("../components/About"), { ssr: false });
+const Services = dynamic(() => import("../components/Services"), { ssr: false });
+const Testimonials = dynamic(() => import("../components/Testimonials"), { ssr: false });
+const Contact = dynamic(() => import("../components/Contact"), { ssr: false });
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isFullyLoaded, setIsFullyLoaded] = useState(false);
-
-  // ✅ Detect mobile devices
+  // 🧩 Small performance tweak for mobile
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // ✅ Preload and render full page *off-screen* before showing
-  useEffect(() => {
-    if (isMobile) {
-      // Wait for React to mount and browser to paint everything
-      requestAnimationFrame(() => {
-        setTimeout(() => {
-          setIsFullyLoaded(true);
-        }, 800); // preload delay — adjust between 500–1000ms
-      });
-    } else {
-      setIsFullyLoaded(true);
+    if (window.innerWidth <= 768) {
+      // Reduce scroll lag by forcing hardware acceleration
+      document.body.style.transform = "translateZ(0)";
+      document.body.style.willChange = "transform";
     }
-  }, [isMobile]);
-
-  // ✅ While preloading on mobile, show a smooth splash/loading screen
-  if (isMobile && !isFullyLoaded) {
-    return (
-      <main className="flex justify-center items-center h-screen bg-black text-white text-lg font-semibold">
-        Optimizing mobile experience...
-      </main>
-    );
-  }
+  }, []);
 
   return (
     <main className="scroll-smooth overflow-x-hidden">
@@ -52,7 +29,6 @@ export default function Home() {
     </main>
   );
 }
-
 
 
 
