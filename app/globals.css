@@ -17,34 +17,19 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-} 
+}
 
 /* ========== GLOBAL BODY STYLING ========== */
-  body {
+body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #000000, #02060f, #050f20);
-  background-size: 400% 400%;
-  animation: gradientShift 25s ease infinite;
-  overflow-x: hidden; 
+  background: linear-gradient(135deg, #000000, #02060f, #050f20); /* SAME colors static */
+  background-size: cover;
+  overflow-x: hidden;
   overflow-y: auto;
   position: relative;
   color: white;
-  will-change: background-position;
   font-family: "Poppins", sans-serif;
-} 
-
-/* ========== GRADIENT BACKGROUND ANIMATION ========== */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 /* ========== PARTICLE EFFECT ========== */
@@ -56,7 +41,7 @@ body::before {
   width: 100%;
   height: 100%;
   background-image: radial-gradient(rgba(0, 120, 255, 0.15) 1px, transparent 2px),
-                    radial-gradient(rgba(0, 80, 255, 0.08) 1px, transparent 2px);
+    radial-gradient(rgba(0, 80, 255, 0.08) 1px, transparent 2px);
   background-size: 140px 140px, 100px 100px;
   animation: particleFloat 30s linear infinite;
   pointer-events: none;
@@ -82,9 +67,7 @@ body::before {
   font-family: myFont;
 }
 
-/* ========== SMOOTH SCROLLING (no snap) ========== */
- html {
+/* ========== SMOOTH SCROLLING ========== */
+html {
   scroll-behavior: smooth;
-} 
-
-
+}
