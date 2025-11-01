@@ -1,37 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { MotionConfig } from "framer-motion";
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Testimonials from "../components/Testimonials";
-import Contact from "../components/Contact";
-import Services from "../components/Services";
+import React from "react";
+
+import HeroComp from "../components/Hero";
+import AboutComp from "../components/About";
+import TestimonialsComp from "../components/Testimonials";
+import ContactComp from "../components/Contact";
+import ServicesComp from "../components/Services";
+
+// memo freeze to avoid re-render 
+const Hero = React.memo(HeroComp);
+const About = React.memo(AboutComp);
+const Testimonials = React.memo(TestimonialsComp);
+const Contact = React.memo(ContactComp);
+const Services = React.memo(ServicesComp);
 
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  // Detecting if the user is on a mobile screen
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
   return (
-    // Disabling or simplifying all Framer Motion animations on mobile
-    <MotionConfig reducedMotion={isMobile ? "always" : "never"}>
-      <main className="scroll-smooth overflow-x-hidden">
-        <Hero />
-        <About />
-        <Services />
-        <Testimonials />
-        <Contact />
-      </main>
-    </MotionConfig>
+    <main className="scroll-smooth">
+      <Hero />
+      <About />
+      <Services />
+      <Testimonials />
+      <Contact />
+    </main>
   );
 }
+
+
+
+
+
+
+
+
+
 
 
 
