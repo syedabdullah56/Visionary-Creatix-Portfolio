@@ -71,3 +71,23 @@ body::before {
 html {
   scroll-behavior: smooth;
 }
+
+
+
+/* MOBILE PERFORMANCE FIX */
+@media (max-width: 768px) {
+  body {
+    background-attachment: fixed;
+    background-size: cover !important;
+    animation: none !important;
+  }
+
+  body::before {
+    animation: none !important;
+    opacity: 0.05 !important;  /* keep subtle static glow */
+  }
+
+  * {
+    transition: none !important;
+  }
+}
