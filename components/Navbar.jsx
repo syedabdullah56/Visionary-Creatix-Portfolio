@@ -69,6 +69,7 @@ export default function Navbar() {
                         { title: "Web Development", link: "/services/web-development" },
                         { title: "SEO Optimization", link: "/services/seo" },
                         { title: "Graphic Designing", link: "/services/graphic-design" },
+                        { title: "AI Services", link: "/services/ai-services" },
                         { title: "Ad Campaigns", link: "/services/ads-campaigns" },
                       ].map((service) => (
                         <li key={service.link}>

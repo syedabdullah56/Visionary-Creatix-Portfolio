@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Code2, Search, Palette, Megaphone } from "lucide-react";
+import { Code2, Search, Palette, Megaphone,Bot } from "lucide-react";
 import Link from "next/link";
 
 export default function Services() {
@@ -22,6 +22,12 @@ export default function Services() {
       title: "Graphic Designing",
       desc: "Creative, aesthetic, and impactful designs that define your brand identity.",
       link: "/services/graphic-design",
+    },
+    {
+    icon: <Bot size={48} className="text-cyan-400" />,
+    title: "AI Services",
+    desc: "AI agents, intelligent chatbots, predictive analytics, and custom AI solutions.",
+    link: "/services/ai-services",
     },
     {
       icon: <Megaphone size={48} className="text-cyan-400" />,
